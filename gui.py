@@ -135,12 +135,19 @@ class Ui_Practica2(object):
         self.label_2.setObjectName("label_2")
 
         self.pushButton = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton.setGeometry(QtCore.QRect(70, 440, 200, 28))
+        self.pushButton.setGeometry(QtCore.QRect(70, 440, 200, 30))
         font = QtGui.QFont()
         font.setPointSize(12)
         self.pushButton.setFont(font)
         self.pushButton.setObjectName("pushButton")
         self.pushButton.clicked.connect(self.selArchivo)
+
+        self.label_6 = QtWidgets.QLabel(self.centralwidget)
+        self.label_6.setGeometry(QtCore.QRect(280, 440, 200, 30))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.label_6.setFont(font)
+        self.label_6.setObjectName("label_6")
 
         self.label_3 = QtWidgets.QLabel(self.centralwidget)
         self.label_3.setGeometry(QtCore.QRect(80, 500, 55, 16))
@@ -220,6 +227,7 @@ class Ui_Practica2(object):
         self.label_3.setText(_translate("Practica2", "Llave"))
         self.label_4.setText(_translate("Practica2", "VI"))
         self.label_5.setText(_translate("Practica2", "Pedroza García Rodolfo \n" "Pardo Alanis Arturo Isaac"))
+        self.label_6.setText(_translate("Practica2", "Nombre del archivo"))
         self.pushButton_2.setText(_translate("Practica2", "ECB"))
         self.pushButton_3.setText(_translate("Practica2", "CBC"))
         self.pushButton_4.setText(_translate("Practica2", "OFB"))
@@ -228,6 +236,8 @@ class Ui_Practica2(object):
     def selArchivo(self):
         self.fname, _ = QtWidgets.QFileDialog.getOpenFileName(Practica2, 'Open a file', '', 'Images (*.png *.jpg *.bmp)')
         print(self.fname)
+        filename = os.path.basename(self.fname)
+        self.label_6.setText(filename)
 
     def modos(self, modo):
         llave = self.lineEdit.text()
@@ -236,9 +246,9 @@ class Ui_Practica2(object):
         print(self.fname)
 
         if self.radioButton.isChecked():
-            image_encrypt(self.fname , modo, iv.encode(), llave.encode())
+            image_encrypt(self.fname , modo, iv.encode("utf8"), llave.encode())
         else:
-            image_decrypt(self.fname , modo, iv.encode(), llave.encode())
+            image_decrypt(self.fname , modo, iv.encode("utf8"), llave.encode())
 
 
 
