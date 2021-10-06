@@ -235,7 +235,6 @@ class Ui_Practica2(object):
 
     def selArchivo(self):
         self.fname, _ = QtWidgets.QFileDialog.getOpenFileName(Practica2, 'Open a file', '', 'Images (*.png *.jpg *.bmp)')
-        print(self.fname)
         filename = os.path.basename(self.fname)
         self.label_6.setText(filename)
 
@@ -243,7 +242,6 @@ class Ui_Practica2(object):
         llave = self.lineEdit.text()
         iv = self.lineEdit_2.text()
         # print("hola {m} {l}  {i} ".format(m=modo, l= llave, i = iv))
-        print(self.fname)
 
         if self.radioButton.isChecked():
             image_encrypt(self.fname , modo, iv.encode("utf8"), llave.encode())
