@@ -1,2 +1,2 @@
-# Cifrado_Modos_de_Operacion
-Practica2_crypto
+# Practicas Crypto
+CIFRADOR POR BLOQUES DES
