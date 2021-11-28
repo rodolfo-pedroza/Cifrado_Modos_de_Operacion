@@ -1,3 +1,3 @@
 # Practicas Crypto 
-### [CIFRADOR POR BLOQUES DES](https://github.com/rodolfo-pedroza/Cifrado_Modos_de_Operacion/tree/master)
-### FIRMA DIGITAL
+### [CIFRADOR POR BLOQUES DES](https://github.com/rodolfo-pedroza/Crypto/tree/ModoOperacion)
+### [FIRMA DIGITAL](https://github.com/rodolfo-pedroza/Crypto/tree/FirmaDigital)
